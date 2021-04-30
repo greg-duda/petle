@@ -217,21 +217,21 @@ dodaje do siebie elementu number lub string do siebie tworząc sumę lub jeden d
 lub "string" to niech pokaże odpowiedni komunikat "Drugi parametr jest nieprawidłowy!", dodaj jeszcze zabezpieczenie jeśli tablica będzie pusta */
 
 const array9 = [1, 2, 3, 4, 'string1', 'string2', 'string3']
-function addArray(array) {
+function addArray(array, parametr) {
     let string = ''
     let number = 0
    
     for(i = 0; i < array.length; i++)
-    if(typeof array[i] === "number") {
+    if(typeof array[i] === "number" && parametr === 'number') {
         number += array[i]
     }
-    else if(typeof array[i] === "string") {
+    else if(typeof array[i] === "string" && parametr === 'string') {
         string += array[i]
     }
    console.log(string)
    console.log(number)
 }
-addArray(array9)
+addArray(array9, 'number')
 
 /* f) przyjmuje jako parametr tablicę obiektów. W każdym obiekcie powinno znajdować się: name, lastName, hasCar, hasDrivingLicence. Niech będzie
 to tablica z 4 osobami. Stwórz funkcję które przyjmie taką tablicę jako parametr i sprawdzi nam kto ma prawo jazdy i samochód i kto może Cię
